@@ -24,7 +24,13 @@ jobs:
         distribution: 'temurin'
         server-id: github # Value of the distributionManagement/repository/id field of the pom.xml
         settings-path: ${{ github.workspace }} # location for the settings.xml file
-
+    - name: Read/Write Properties File
+      uses: kurt-code/gha-properties@v0.0.1
+      id: write-properties
+      with:
+        operation: 'write'
+        file-path: 'src/main/resources/oidc.properties'
+        key-value-pairs: '{"oidc.client-secret.DEV": "${{ secrets.SECRET_TEST }}"'
     - name: Build with Maven
       run: mvn -B package --file pom.xml && cat pom.xml
 
