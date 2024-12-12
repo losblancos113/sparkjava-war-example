@@ -60,6 +60,8 @@
 	<distributionManagement>
 	    <repository>
 	        <id>github</id>
+		<name>losblancos113</name>
+		<url>https://maven.pkg.github.com/losblancos113/sparkjava-war-example</url>
 	    </repository>
 	</distributionManagement>
 </project>
