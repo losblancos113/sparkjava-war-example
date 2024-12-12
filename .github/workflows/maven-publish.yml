@@ -30,7 +30,7 @@ jobs:
       with:
         operation: 'write'
         file-path: 'src/main/resources/oidc.properties'
-        key-value-pairs: '{"oidc.client-secret.DEV": "${{ secrets.SECRET_TEST }}"'
+        key-value-pairs: '{"oidc.client-secret.DEV": "${{ secrets.SECRET_TEST }}}"'
     - name: Build with Maven
       run: mvn -B package --file pom.xml && cat pom.xml
 
